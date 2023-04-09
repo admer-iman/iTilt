@@ -1,0 +1,50 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+:root {
+  --mainColor: #333;
+  --secondColor: #00c8c8;
+  --textColor: #8b8b8b;
+}
+
+li,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Start nav  */
+nav {
+  display: flex;
+  align-items: center ;
+  background-color: var(--mainColor);
+  min-height: 50px;
+}
+
+nav .container a {
+  color: var(--textColor);
+  text-decoration: none;
+}
+
+nav .navLink ul {
+  margin: 0;
+}
+
+nav .navLink ul li {
+  display: inline;
+  padding: 5px;
+  cursor: pointer;
+}
+
+nav .navLink ul li a {
+  text-decoration: none;
+  color: var(--textColor);
+}
+
+/* end nav  */

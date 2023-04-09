@@ -1,0 +1,200 @@
+{% extends "base.html" %} {% block addlinks %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static' , filename='css/table.css') }}"
+/>
+{% endblock %} {% block title%} Dashboard {% endblock %} {% block style %}
+<style>
+  .title-h1 {
+    margin-bottom: 5px;
+  }
+  figure {
+    text-align: center;
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .min-width-border {
+    min-width: 247px;
+    border-bottom: 1px solid #7273723b;
+  }
+  .text-none {
+    text-transform: none;
+  }
+</style>
+{% endblock %} {% block body %} {% with messages =
+get_flashed_messages(with_categories = True) %} {% if messages %} {% for
+categorie , msg in messages %}
+<div class="alert alert-{{categorie}} alert-dismissible  fade show m-0">
+  {{msg}}
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endfor %} {%endif%} {%endwith %}
+
+<div id="mainCoantiner">
+  <!--dust particel-->
+  <div class="margin-body">
+    <div>
+      <div class="starsec"></div>
+      <div class="starthird"></div>
+      <div class="starfourth"></div>
+      <div class="starfifth"></div>
+    </div>
+    <!--Dust particle end--->
+    <!-- *start big header in or title* -->
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <div class="wpb_text_column wpb_content_element">
+          <div class="wpb_wrapper">
+            <div class="title-h1 text-center">
+              <span class="light"
+                ><span class="text-none">iTilt</span> Sensor Readings</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- *end big header in or title* -->
+
+    <div class="row justify-content-center">
+      <!-- *start Tilt* -->
+      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+        <div class="pricing-column">
+          <div class="pricing-price-row">
+            <div class="pricing-price-wrapper">
+              <div class="pricing-price">
+                <div class="pricing-cost data">0.00</div>
+                <div class="time">Degree</div>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-row-title">
+            <div class="pricing_row_title">Tilt</div>
+          </div>
+          <figure class="pricing-row min-width-border">
+            This value should be about 89 if the iTilt is on a horizontal
+            surface
+          </figure>
+        </div>
+      </div>
+      <!-- *end 1er elem* -->
+      <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- *start Roll* -->
+      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+        <div class="pricing-column">
+          <div class="pricing-price-row">
+            <div class="pricing-price-wrapper">
+              <div class="pricing-price">
+                <div class="pricing-cost data">0.00</div>
+                <div class="time">Degree</div>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-row-title">
+            <div class="pricing_row_title">Roll</div>
+          </div>
+          <figure class="pricing-row min-width-border">
+            This value should be close to 90 when iTilt is free flowing in
+            liquid surface
+          </figure>
+        </div>
+      </div>
+      <!-- *end 1er elem* -->
+      <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- *start Gravity* -->
+      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+        <div class="pricing-column">
+          <div class="pricing-price-row">
+            <div class="pricing-price-wrapper">
+              <div class="pricing-price">
+                <div class="pricing-cost data">0.00000000</div>
+                <div class="time">SG</div>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-row-title">
+            <div class="pricing_row_title">Gravity</div>
+          </div>
+          <figure class="pricing-row min-width-border"></figure>
+        </div>
+      </div>
+      <!-- *end 1er elem* -->
+      <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- *start ABV* -->
+      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+        <div class="pricing-column">
+          <div class="pricing-price-row">
+            <div class="pricing-price-wrapper">
+              <div class="pricing-price">
+                <div class="pricing-cost data">-0.000</div>
+                <div class="time">%</div>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-row-title">
+            <div class="pricing_row_title">ABV</div>
+          </div>
+          <figure class="pricing-row min-width-border">
+            Alcohol by Volume
+          </figure>
+        </div>
+      </div>
+      <!-- *end 1er elem* -->
+      <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- *start Temperature* -->
+      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+        <div class="pricing-column">
+          <div class="pricing-price-row">
+            <div class="pricing-price-wrapper">
+              <div class="pricing-price">
+                <div class="pricing-cost data">0.00</div>
+                <div class="time">°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-row-title">
+            <div class="pricing_row_title">DS18B20</div>
+          </div>
+          <figure class="pricing-row min-width-border">
+            Temperature according to DS18B20
+          </figure>
+          <figure class="">Very accurate</figure>
+        </div>
+      </div>
+      <!-- *end 1er elem* -->
+      <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- *start internal Temperature* -->
+      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+        <div class="pricing-column">
+          <div class="pricing-price-row">
+            <div class="pricing-price-wrapper">
+              <div class="pricing-price">
+                <div class="pricing-cost data">0.00</div>
+                <div class="time">°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-row-title">
+            <div class="pricing_row_title">Gyro</div>
+          </div>
+          <figure class="pricing-row min-width-border">
+            Gyro internal Temperature
+          </figure>
+          <figure class="">1 degree resolution</figure>
+        </div>
+      </div>
+      <!-- *end 1er elem* -->
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block script %}
+<script src="{{url_for('static' , filename ='script/main.js')}}"></script>
+{% endblock %}

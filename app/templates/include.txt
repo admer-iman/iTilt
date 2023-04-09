@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block addlinks %}
+ {% endblock %}
+
+{% block title%} {% endblock %}
+
+{% block style %}  {%  endblock %}
+
+{% block body %}
+
+
+{% endblock %}
+
+{% block script %} 
+{% endblock %}

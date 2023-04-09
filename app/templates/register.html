@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block addlinks %}
+{% endblock %}
+
+{% block title%} RegisterPage {% endblock %}
+
+{% block style %}
+<style>
+  body {
+    background-color: #eee;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <form class="mt-4 ms-auto me-auto w-50" method="POST" action="">
+    <h1 class="h3 mb-3 fw-normal text-center">Register an Account</h1>
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+      {{ form.username.label(class='form-label') }}
+
+      {% if form.username.errors %}
+      {{ form.username(class='form-control form-control-sm is-invalid') }}
+      <div class="invalid-feedback">
+        {% for error in form.username.errors %}
+        <small>{{error}}</small>
+        {%endfor%}
+      </div>
+      {% else %}
+      {{ form.username(class='form-control form-control-sm') }}
+      {%endif%}
+
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>  -->
+    </div>
+    <div class="mb-3">
+      {{ form.email.label(class='form-label') }}
+      {% if form.email.errors %}
+      {{ form.email(class='form-control form-control-sm is-invalid') }}
+      <div class=" invalid-feedback">
+        {% for error in form.email.errors %}
+        <small>{{error}}</small>
+        {%endfor%}
+      </div>
+      {% else %}
+      {{ form.email(class='form-control form-control-sm') }}
+      {%endif%}
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      {{ form.password.label(class='form-label') }}
+      {{ form.password(class='form-control form-control-sm') }}
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      {{ form.confirmPassword.label(class='form-label') }}
+      {{ form.confirmPassword(class='form-control form-control-sm') }}
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    {{ form.submit(class='btn btn-outline-primary') }}
+    <div class="mt-2">
+      <small class=" text-muted">Already Have an Account ? <a class="ms-2 me-2" href="{{ url_for('login') }}">Log
+          In</a> instead </small>
+    </div>
+  </form>
+</div>
+
+
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}
